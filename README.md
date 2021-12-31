@@ -1,6 +1,6 @@
 # tauri-nix-mac-repro
 
-Reproduction for a build problem on macOS when trying to build a Tauri app with `cargo` installed via Nix.
+Reproduction for a build problem on macOS when trying to build a Tauri app with `cargo` installed via Nix. **The problem does not appear when installing Rust via [rustup](https://www.rust-lang.org/learn/get-started) instead of Nix.**
 
 It currently seems like [this issue](https://github.com/h4llow3En/mac-notification-sys/issues/28) is the problem.
 
