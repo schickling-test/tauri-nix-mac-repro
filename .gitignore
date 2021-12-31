@@ -1,0 +1,4 @@
+node_modules
+.direnv
+src-tauri/target
+dist
