@@ -1,5 +1,8 @@
 { nixpkgs ? import <nixpkgs> { } }:
 with nixpkgs; mkShell {
+
+  tauri-local = callPackage ./tauri-local.nix { };
+
   buildInputs = [
     # needed to build tauri
     # https://github.com/NixOS/nixpkgs/blob/master/pkgs/os-specific/darwin/apple-sdk/frameworks.nix
@@ -11,5 +14,7 @@ with nixpkgs; mkShell {
 
     nodejs-16_x
   ];
+
+  nativeBuildInputs = [ installShellFiles ];
 
 }
