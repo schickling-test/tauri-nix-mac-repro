@@ -1,0 +1,45 @@
+{
+  "nodes": {
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1641235261,
+        "narHash": "sha256-1dklOoE5gisCcvRBTBDrCBgcbHQ5kEcaTpldoismE5c=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "b84d1588669240bf6c70b7974efadad3105ecc42",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "master",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "nixpkgs": "nixpkgs",
+        "tauri-nix-mac-repo": "tauri-nix-mac-repo"
+      }
+    },
+    "tauri-nix-mac-repo": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1640950011,
+        "narHash": "sha256-S7PN37CNJiirGFFMukiGoI2ZxZ0/7l66xyRdLINLaHk=",
+        "owner": "schickling-test",
+        "repo": "tauri-nix-mac-repro",
+        "rev": "80a33b4a828a562970cd3a807d93abc4c977e039",
+        "type": "github"
+      },
+      "original": {
+        "owner": "schickling-test",
+        "ref": "main",
+        "repo": "tauri-nix-mac-repro",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
