@@ -25,18 +25,13 @@
     "tauri-nix-mac-repo": {
       "flake": false,
       "locked": {
-        "lastModified": 1640950011,
-        "narHash": "sha256-S7PN37CNJiirGFFMukiGoI2ZxZ0/7l66xyRdLINLaHk=",
-        "owner": "schickling-test",
-        "repo": "tauri-nix-mac-repro",
-        "rev": "80a33b4a828a562970cd3a807d93abc4c977e039",
-        "type": "github"
+        "narHash": "sha256-rU9B5moHRqndtRuwnl7yZ8627JY9z6VVSFoZqgltzAM=",
+        "path": "/nix/store/8rx3x17hqmmvk8mgiyvwk4jyxai7iyxp-source/src-tauri",
+        "type": "path"
       },
       "original": {
-        "owner": "schickling-test",
-        "ref": "main",
-        "repo": "tauri-nix-mac-repro",
-        "type": "github"
+        "path": "/nix/store/8rx3x17hqmmvk8mgiyvwk4jyxai7iyxp-source/src-tauri",
+        "type": "path"
       }
     }
   },

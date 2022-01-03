@@ -3,7 +3,7 @@ description = "Flake to manage my Java workspace.";
 
 inputs.nixpkgs.url = "github:nixos/nixpkgs/master";
 inputs.tauri-nix-mac-repo = {
-	url = "github:schickling-test/tauri-nix-mac-repro/main";
+	url = "./src-tauri";
 	flake = false;
 };
 
