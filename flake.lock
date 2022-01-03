@@ -26,11 +26,11 @@
       "flake": false,
       "locked": {
         "narHash": "sha256-rU9B5moHRqndtRuwnl7yZ8627JY9z6VVSFoZqgltzAM=",
-        "path": "/nix/store/8rx3x17hqmmvk8mgiyvwk4jyxai7iyxp-source/src-tauri",
+        "path": "/nix/store/p7ca0dizq30bzkjaqrk2rspdvh3ywp6i-source/app/src-tauri",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/8rx3x17hqmmvk8mgiyvwk4jyxai7iyxp-source/src-tauri",
+        "path": "/nix/store/p7ca0dizq30bzkjaqrk2rspdvh3ywp6i-source/app/src-tauri",
         "type": "path"
       }
     }

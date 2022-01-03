@@ -3,7 +3,7 @@ description = "Flake to manage my Java workspace.";
 
 inputs.nixpkgs.url = "github:nixos/nixpkgs/master";
 inputs.tauri-nix-mac-repo = {
-	url = "./src-tauri";
+	url = "./app/src-tauri";
 	flake = false;
 };
 
@@ -18,9 +18,15 @@ in {
     name = "tauri-test";
     version = "test";
     
-    src = tauri-src + "/src-tauri";
+    src = tauri-src;
 
     cargoSha256 = "sha256-hbGfT2PWLIRoc9LN9KN9o56kHByvvNf35ZDO39PyRN8=";
+    cargoLock = {
+      lockFile = "${src}/Cargo.lock";
+    };
+    dontUnpack = true;
+    unpackPhase = ":";
+
     buildInputs = with pkgs; [ 
 	pkgs.cargo 
 	pkgs.darwin.apple_sdk.frameworks.Carbon 
