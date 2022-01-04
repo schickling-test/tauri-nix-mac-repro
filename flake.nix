@@ -9,15 +9,15 @@ inputs.tauri-nix-mac-repo = {
 
 outputs = inputs:
 let
-  system = "x86_64-darwin";
-  pkgs = inputs.nixpkgs.legacyPackages.${system};
+  pkgs-x86_64-darwin = inputs.nixpkgs.legacyPackages.x86_64-darwin;
+  pkgs-aarch64-darwin = inputs.nixpkgs.legacyPackages.aarch64-darwin;
   tauri-src = inputs.tauri-nix-mac-repo;
 
 in {
-  devShell.${system} = pkgs.rustPlatform.buildRustPackage rec {
+  devShell.aarch64-darwin = pkgs-aarch64-darwin.rustPlatform.buildRustPackage rec {
     name = "tauri-test";
     version = "test";
-    
+
     src = tauri-src;
 
     cargoSha256 = "sha256-hbGfT2PWLIRoc9LN9KN9o56kHByvvNf35ZDO39PyRN8=";
@@ -26,19 +26,58 @@ in {
     };
     dontUnpack = true;
     unpackPhase = ":";
+    buildPhase = ''
+      cd $out/app/
+      ${pkgs-aarch64-darwin.cargo}/bin/cargo build
+    '';
 
-    buildInputs = with pkgs; [ 
-	pkgs.cargo 
-	pkgs.darwin.apple_sdk.frameworks.Carbon 
-	pkgs.darwin.apple_sdk.frameworks.AppKit 
-	pkgs.darwin.apple_sdk.frameworks.WebKit
-	pkgs.darwin.apple_sdk.frameworks.Security
-	pkgs.libiconv
-	pkgs.yarn
-	pkgs.nodejs-16_x ];
+    buildInputs = with pkgs-aarch64-darwin; [
+			pkgs-aarch64-darwin.cargo
+			pkgs-aarch64-darwin.darwin.apple_sdk.frameworks.Carbon
+			pkgs-aarch64-darwin.darwin.apple_sdk.frameworks.AppKit
+			pkgs-aarch64-darwin.darwin.apple_sdk.frameworks.WebKit
+			pkgs-aarch64-darwin.darwin.apple_sdk.frameworks.Security
+			pkgs-aarch64-darwin.libiconv
+			pkgs-aarch64-darwin.yarn
+			pkgs-aarch64-darwin.nodejs-16_x
+		];
 
     shellHook = ''
-	PATH="${pkgs.cargo}/bin:${pkgs.yarn}/bin:${pkgs.nodejs-16_x}/bin:$PATH"
+			PATH="${pkgs-aarch64-darwin.cargo}/bin:${pkgs-aarch64-darwin.yarn}/bin:${pkgs-aarch64-darwin.nodejs-16_x}/bin:$PATH"
+    '';
+  };
+
+
+	devShell.x86_64-darwin = pkgs-x86_64-darwin.rustPlatform.buildRustPackage rec {
+    name = "tauri-test";
+    version = "test";
+
+    src = tauri-src;
+
+    cargoSha256 = "sha256-hbGfT2PWLIRoc9LN9KN9o56kHByvvNf35ZDO39PyRN8=";
+    cargoLock = {
+      lockFile = "${src}/Cargo.lock";
+    };
+    dontUnpack = true;
+    unpackPhase = ":";
+    buildPhase = ''
+      cd $out/app/
+      ${pkgs-x86_64-darwin.cargo}/bin/cargo build
+    '';
+
+    buildInputs = with pkgs-x86_64-darwin; [
+			pkgs-x86_64-darwin.cargo
+			pkgs-x86_64-darwin.darwin.apple_sdk.frameworks.Carbon
+			pkgs-x86_64-darwin.darwin.apple_sdk.frameworks.AppKit
+			pkgs-x86_64-darwin.darwin.apple_sdk.frameworks.WebKit
+			pkgs-x86_64-darwin.darwin.apple_sdk.frameworks.Security
+			pkgs-x86_64-darwin.libiconv
+			pkgs-x86_64-darwin.yarn
+			pkgs-x86_64-darwin.nodejs-16_x
+		];
+
+    shellHook = ''
+			PATH="${pkgs-x86_64-darwin.cargo}/bin:${pkgs-x86_64-darwin.yarn}/bin:${pkgs-x86_64-darwin.nodejs-16_x}/bin:$PATH"
     '';
   };
  };

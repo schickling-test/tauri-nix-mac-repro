@@ -2,11 +2,11 @@
   "nodes": {
     "nixpkgs": {
       "locked": {
-        "lastModified": 1641235261,
-        "narHash": "sha256-1dklOoE5gisCcvRBTBDrCBgcbHQ5kEcaTpldoismE5c=",
+        "lastModified": 1641285291,
+        "narHash": "sha256-KYaOBNGar3XWTxTsYPr9P6u74KAqNq0wobEC236U+0c=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "b84d1588669240bf6c70b7974efadad3105ecc42",
+        "rev": "0432195a4b8d68faaa7d3d4b355260a3120aeeae",
         "type": "github"
       },
       "original": {
@@ -26,11 +26,11 @@
       "flake": false,
       "locked": {
         "narHash": "sha256-rU9B5moHRqndtRuwnl7yZ8627JY9z6VVSFoZqgltzAM=",
-        "path": "/nix/store/p7ca0dizq30bzkjaqrk2rspdvh3ywp6i-source/app/src-tauri",
+        "path": "/nix/store/wks1672a2yxpcj3ymrc10byfzml1zi9m-source/app/src-tauri",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/p7ca0dizq30bzkjaqrk2rspdvh3ywp6i-source/app/src-tauri",
+        "path": "/nix/store/wks1672a2yxpcj3ymrc10byfzml1zi9m-source/app/src-tauri",
         "type": "path"
       }
     }
